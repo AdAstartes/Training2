@@ -70,6 +70,7 @@ namespace PointsFGames
                 OptionalGame("Clubs10");
 
             file.Save(playerList);
+            //testing
             this.Close();
         }
         private void OptionalGame(string game)
