@@ -1,0 +1,33 @@
+﻿<Window x:Class="PointsFGames.PlayerRegForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PointsFGames"
+        mc:Ignorable="d"
+        Title="PlayerRegForm" Height="450" Width="800">
+    <Grid>
+        <ComboBox x:Name="PlayerCountComboBox" Margin="10,41,684,346" IsDropDownOpen="True" SelectionChanged="ComboBox_Selecteditem">
+            <ListBoxItem Content="1"/>
+            <ListBoxItem Content="2"/>
+            <ListBoxItem Content="3"/>
+            <ListBoxItem Content="4"/>
+            <ListBoxItem Cursor="" Content="5"/>
+            <ListBoxItem Content="6"/>
+        </ComboBox>
+        <Label x:Name="PlayerNoLabel" Content="Choose the number of players" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="AddPlayerBox" HorizontalAlignment="Left" Height="19" Margin="10,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="106" KeyDown="Selection"/>
+        <DataGrid x:Name="PlayerListDataGrid" HorizontalAlignment="Left" Height="119" Margin="195,18,0,0" VerticalAlignment="Top" Width="227" d:ItemsSource="{d:SampleData ItemCount=5}" >
+            <DataGrid.CellStyle>
+                <Style/>
+            </DataGrid.CellStyle>
+        </DataGrid>
+        <CheckBox x:Name="LevateCheckBox" Content="Levate" HorizontalAlignment="Left" Height="21" Margin="10,217,0,0" VerticalAlignment="Top" Width="96"/>
+        <CheckBox x:Name="TotalePlusCheckBox" Content="Totale+" HorizontalAlignment="Left" Height="21" Margin="125,217,0,0" VerticalAlignment="Top" Width="107"/>
+        <CheckBox x:Name="Clubs10CheckBox" Content="10 Clubs" HorizontalAlignment="Left" Height="21" Margin="237,216,0,0" VerticalAlignment="Top" Width="93"/>
+        <Label x:Name="Player_Name_Label" Content="Player Name" HorizontalAlignment="Left" Margin="10,93,0,0" VerticalAlignment="Top"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="0,177,0,0" VerticalAlignment="Top" Width="116"/>
+        <Button x:Name="StartButton" Content="Start" HorizontalAlignment="Left" Height="76" Margin="592,287,0,0" VerticalAlignment="Top" Width="185" Click="StartButton_Click"/>
+
+    </Grid>
+</Window>
