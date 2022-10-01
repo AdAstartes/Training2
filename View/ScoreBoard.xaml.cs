@@ -11,6 +11,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using PointsFGames.Controller;
+using PointsFGames.View;
+using PointsFGames.Model;
+
 
 namespace PointsFGames.View
 {
@@ -22,6 +26,14 @@ namespace PointsFGames.View
         public ScoreBoard()
         {
             InitializeComponent();
+            List<Player> players = new List<Player>();
+            TextSaver loader = new TextSaver("E:\\.coding Tutorial\\PointsFGames\\Save.csv");
+
+            players = loader.Load("E:\\.coding Tutorial\\PointsFGames\\Save.csv");
+            foreach(Player player in players)
+                Games_DataGrid.Items.Add(player);
+            
+
         }
     }
 }

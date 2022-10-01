@@ -53,15 +53,18 @@ namespace PointsFGames
             }
             
             if (e.Key == Key.Enter && playerList.Count() >= playerNo)
-                MessageBox.Show("TBA 1");
+                MessageBox.Show("All players have been added");
 
         }
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
             TextSaver file = new TextSaver("E:\\.coding Tutorial\\PointsFGames\\Save.csv");
+            TextSaver loader = new TextSaver("E:\\.coding Tutorial\\PointsFGames\\Save.csv");
+            
+            file.Save(playerList);
             ScoreBoard gameStart = new ScoreBoard();
-            gameStart.Show();
+            
             if ((bool)LevateCheckBox.IsChecked)
                 OptionalGame("Levate");
             if ((bool)TotalePlusCheckBox.IsChecked)
@@ -70,7 +73,9 @@ namespace PointsFGames
                 OptionalGame("Clubs10");
 
             file.Save(playerList);
-            //testing
+       //     loader.Load("E:\\.coding Tutorial\\PointsFGames\\Load.csv");
+
+            gameStart.Show();
             this.Close();
         }
         private void OptionalGame(string game)

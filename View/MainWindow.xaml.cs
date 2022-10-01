@@ -41,12 +41,6 @@ namespace PointsFGames
             scoringRules.Show();
         }
 
-        private void DebugButton_Click(object sender, RoutedEventArgs e)
-        {
-            ControllerPointGames controllerPointGames = new ControllerPointGames();
-            controllerPointGames.Start();
-        }
-
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             TextSaver file = new TextSaver("E:\\.coding Tutorial\\PointsFGames\\Save.txt");

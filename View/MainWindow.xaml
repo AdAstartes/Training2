@@ -13,7 +13,6 @@
         </Grid.ColumnDefinitions>
         <Button x:Name="NewGameButton" Content="New Game" HorizontalAlignment="Left" Height="76" Margin="31,47,0,0" VerticalAlignment="Top" Width="353" Click="NewGameButton_Click"/>
         <Button x:Name="ScoreModesButton" Content="Scoring Modes" HorizontalAlignment="Left" Height="94" Margin="31,164,0,0" VerticalAlignment="Top" Width="353" Click="ScoreModesButton_Click"/>
-        <Button x:Name="DebugButton" Grid.Column="1" Content="Debug" HorizontalAlignment="Left" Height="36" Margin="266,357,0,0" VerticalAlignment="Top" Width="65" Click="DebugButton_Click"/>
         <Button x:Name="SaveButton" Content="Save Test" Margin="31,287,64,41" Click="SaveButton_Click"/>
     </Grid>
 </Window>

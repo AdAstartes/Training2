@@ -7,7 +7,31 @@
         mc:Ignorable="d"
         Title="ScoreBoard" Height="450" Width="800">
     <Grid>
-        <Label x:Name="WIPLabel" Content="WIP" HorizontalAlignment="Left" Height="84" Margin="61,63,0,0" VerticalAlignment="Top" Width="102"/>
+        <DataGrid x:Name="Games_DataGrid" d:ItemsSource="{d:SampleData ItemCount=5}">
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="Green"/>
+                    <Setter Property="FontWeight" Value="SemiBold"/>
+                </Style>
+            </DataGrid.Resources>
 
+            <DataGrid.Columns>
+                <DataGridTextColumn Header =" " Binding="{Binding name}" Width="75"/>
+                <DataGridTextColumn Header ="KR" Binding="{Binding listGames}" />
+                <DataGridTextColumn Header ="Q"/>
+                <DataGridTextColumn Header ="Carro"/>
+                <DataGridTextColumn Header ="Totale+"/>
+                <DataGridTextColumn Header ="Totale-"/>
+                <DataGridTextColumn Header ="Wist"/>
+                <DataGridTextColumn Header ="Levate"/>
+                <DataGridTextColumn Header ="Rent"/>
+                <DataGridTextColumn Header ="Clubs10"/>
+                
+                <DataGridTextColumn Header =" "/>
+                <!-- "KR", "Q", "Carro", "Totale+", "Totale-", "Wist", "Levate", "Rent", "Clubs10" -->
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="Score_DataGrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="400,199,26,60"/>
+        
     </Grid>
 </Window>

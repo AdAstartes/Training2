@@ -8,6 +8,7 @@ namespace PointsFGames.Model
 {
     internal class ControllerPointGames
     {
+        
         public void Start()
         {
             List<Player> playerList = new List<Player>();
