@@ -37,6 +37,7 @@ namespace PointsFGames
 
         private void ScoreModesButton_Click(object sender, RoutedEventArgs e)
         {
+            // Changed to Load Button
             ScoreBoard gameStart = new ScoreBoard();
             gameStart.Show();
             this.Close();
