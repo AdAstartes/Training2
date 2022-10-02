@@ -11,11 +11,11 @@ namespace PointsFGames.Model
         
         public void Start()
         {
+            /*
             List<Player> playerList = new List<Player>();
             int tPlus = -1, Levate = -1, Clubs10 = -1;
             GameInitialization(ref tPlus, ref Levate, ref Clubs10);
 
-            Console.WriteLine("\nHow many Players?");
             int noPlayers = int.Parse("2");
             for (int i = 0; i < noPlayers; i += 1)
             {
@@ -25,9 +25,7 @@ namespace PointsFGames.Model
                 playerList[i].gamesPlayed["Levate"] = Levate;
                 playerList[i].gamesPlayed["Clubs10"] = Clubs10;
             }
-
-            foreach (var p in playerList)
-                p.Show();
+            */
         }
         public static void GameInitialization(ref int tMinus, ref int Levate, ref int Clubs10)
         {
