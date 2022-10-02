@@ -36,6 +36,7 @@ namespace PointsFGames.Model
             this.gamesPlayed = gamesPlayed;
         }
 
+
         private void PopulateGames()
         {
             gamesPlayed = new Dictionary<string, int>();
@@ -45,7 +46,8 @@ namespace PointsFGames.Model
             gamesPlayed["Clubs10"] = -1;
 
         }
-
+        
+        
         public string ReadGames()
         {
             string games;

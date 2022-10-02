@@ -59,8 +59,8 @@ namespace PointsFGames
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
-            TextSaver file = new TextSaver("E:\\.coding Tutorial\\PointsFGames\\Save.csv");
-            TextSaver loader = new TextSaver("E:\\.coding Tutorial\\PointsFGames\\Save.csv");
+            TextSaver file = new TextSaver("C:\\Users\\emila\\source\\repos\\AdAstartes\\Training2\\Save.csv");
+            TextSaver loader = new TextSaver("C:\\Users\\emila\\source\\repos\\AdAstartes\\Training2\\Save.csv");
             
             file.Save(playerList);
             ScoreBoard gameStart = new ScoreBoard();

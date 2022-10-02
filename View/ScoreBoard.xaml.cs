@@ -27,13 +27,15 @@ namespace PointsFGames.View
         {
             InitializeComponent();
             List<Player> players = new List<Player>();
-            TextSaver loader = new TextSaver("E:\\.coding Tutorial\\PointsFGames\\Save.csv");
+            TextSaver loader = new TextSaver("C:\\Users\\emila\\source\\repos\\AdAstartes\\Training2\\Save.csv");
 
-            players = loader.Load("E:\\.coding Tutorial\\PointsFGames\\Save.csv");
+            players = loader.Load("C:\\Users\\emila\\source\\repos\\AdAstartes\\Training2\\Save.csv");
             foreach(Player player in players)
                 Games_DataGrid.Items.Add(player);
-            
 
+
+            
+             
         }
     }
 }

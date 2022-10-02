@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:PointsFGames.View"
         mc:Ignorable="d"
         Title="ScoreBoard" Height="450" Width="800">
-    <Grid>
-        <DataGrid x:Name="Games_DataGrid" d:ItemsSource="{d:SampleData ItemCount=5}">
+    <Grid>  
+        <DataGrid x:Name="Games_DataGrid" d:ItemsSource="{d:SampleData ItemCount=5}" ItemsSource="{Binding gamesPlayed}" >
             <DataGrid.Resources>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Background" Value="Green"/>
@@ -17,15 +17,15 @@
 
             <DataGrid.Columns>
                 <DataGridTextColumn Header =" " Binding="{Binding name}" Width="75"/>
-                <DataGridTextColumn Header ="KR" Binding="{Binding listGames}" />
-                <DataGridTextColumn Header ="Q"/>
-                <DataGridTextColumn Header ="Carro"/>
-                <DataGridTextColumn Header ="Totale+"/>
-                <DataGridTextColumn Header ="Totale-"/>
-                <DataGridTextColumn Header ="Wist"/>
-                <DataGridTextColumn Header ="Levate"/>
-                <DataGridTextColumn Header ="Rent"/>
-                <DataGridTextColumn Header ="Clubs10"/>
+                <DataGridTextColumn Header ="KR" Binding="{Binding gamesPlayed[KR].Key}" />
+                <DataGridTextColumn Header ="Q" Binding="{Binding NA}"/>
+                <DataGridTextColumn Header ="Carro" Binding="{Binding NA}"/>
+                <DataGridTextColumn Header ="Totale+" Binding="{Binding NA}"/>
+                <DataGridTextColumn Header ="Totale-" Binding="{Binding NA}"/>
+                <DataGridTextColumn Header ="Wist" Binding="{Binding NA}"/>
+                <DataGridTextColumn Header ="Levate" Binding="{Binding NA}"/>
+                <DataGridTextColumn Header ="Rent" Binding="{Binding NA}"/>
+                <DataGridTextColumn Header ="Clubs10"  Binding="{Binding NA}"/>
                 
                 <DataGridTextColumn Header =" "/>
                 <!-- "KR", "Q", "Carro", "Totale+", "Totale-", "Wist", "Levate", "Rent", "Clubs10" -->
@@ -34,4 +34,6 @@
         <DataGrid x:Name="Score_DataGrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="400,199,26,60"/>
         
     </Grid>
+    
+    
 </Window>
