@@ -59,30 +59,30 @@ namespace PointsFGames
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
-            TextSaver file = new TextSaver("E:\\.coding Tutorial\\PointsFGames\\Save.csv");
-            TextSaver loader = new TextSaver("E:\\.coding Tutorial\\PointsFGames\\Save.csv");
+            TextSaver file = new TextSaver("C:\\Users\\emila\\source\\repos\\AdAstartes\\Training2\\Save.csv");
             
-            file.Save(playerList);
-            ScoreBoard gameStart = new ScoreBoard();
+            
             
             if ((bool)LevateCheckBox.IsChecked)
                 OptionalGame("Levate");
             if ((bool)TotalePlusCheckBox.IsChecked)
-                OptionalGame("Totale+");
+                OptionalGame("TotalePlus");
             if ((bool)Clubs10CheckBox.IsChecked)
                 OptionalGame("Clubs10");
 
             file.Save(playerList);
-       //     loader.Load("E:\\.coding Tutorial\\PointsFGames\\Load.csv");
+            //     loader.Load("E:\\.coding Tutorial\\PointsFGames\\Load.csv");
 
+            ScoreBoard gameStart = new ScoreBoard(playerList);
             gameStart.Show();
             this.Close();
         }
         private void OptionalGame(string game)
         {
-            foreach (Player player in playerList)
-                player.gamesPlayed[game] = 0;
 
+            foreach (Player player in playerList)
+                player.SetGamePlayed(game,0);
+            MessageBox.Show(game + "= " + playerList[0].GetGame(game).ToString());
         }
     }
 }

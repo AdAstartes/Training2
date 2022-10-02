@@ -15,7 +15,6 @@ using PointsFGames.Controller;
 using PointsFGames.View;
 using PointsFGames.Model;
 
-
 namespace PointsFGames.View
 {
     /// <summary>
@@ -26,14 +25,30 @@ namespace PointsFGames.View
         public ScoreBoard()
         {
             InitializeComponent();
+
             List<Player> players = new List<Player>();
-            TextSaver loader = new TextSaver("E:\\.coding Tutorial\\PointsFGames\\Save.csv");
-
-            players = loader.Load("E:\\.coding Tutorial\\PointsFGames\\Save.csv");
-            foreach(Player player in players)
-                Games_DataGrid.Items.Add(player);
+            TextSaver loader = new TextSaver("C:\\Users\\emila\\source\\repos\\AdAstartes\\Training2\\Save.csv");
             
+            players = loader.Load();
+            foreach (Player player in players)
+                Games_DataGrid.Items.Add(player.GamesForDataGrid());
+        }
+        public ScoreBoard(List<Player>? playerList)
+        {
+            InitializeComponent();
+            List<Player> players = new List<Player>();
 
+            if (playerList == null || playerList.Count()==0)
+            {
+                TextSaver loader = new TextSaver("C:\\Users\\emila\\source\\repos\\AdAstartes\\Training2\\Save.csv");
+                players = loader.Load();
+            }
+            else
+                players = playerList;
+            
+            foreach(Player player in players)
+                Games_DataGrid.Items.Add(player.GamesForDataGrid());
+            
         }
     }
 }
