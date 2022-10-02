@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="ScoreBoard" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="Games_DataGrid" d:ItemsSource="{d:SampleData ItemCount=5}">
+        <DataGrid x:Name="Games_DataGrid" d:ItemsSource="{d:SampleData ItemCount=5}" >
             <DataGrid.Resources>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Background" Value="Green"/>
@@ -17,21 +17,33 @@
 
             <DataGrid.Columns>
                 <DataGridTextColumn Header =" " Binding="{Binding name}" Width="75"/>
-                <DataGridTextColumn Header ="KR" Binding="{Binding listGames}" />
-                <DataGridTextColumn Header ="Q"/>
-                <DataGridTextColumn Header ="Carro"/>
-                <DataGridTextColumn Header ="Totale+"/>
-                <DataGridTextColumn Header ="Totale-"/>
-                <DataGridTextColumn Header ="Wist"/>
-                <DataGridTextColumn Header ="Levate"/>
-                <DataGridTextColumn Header ="Rent"/>
-                <DataGridTextColumn Header ="Clubs10"/>
-                
+                <DataGridTextColumn Header ="KR" Binding="{Binding KR}" />
+                <DataGridTextColumn Header ="Q" Binding="{Binding Q}"/>
+                <DataGridTextColumn Header ="Carro" Binding="{Binding Carro}"/>
+                <DataGridTextColumn Header ="Totale+" Binding="{Binding TotalePlus}"/>
+                <DataGridTextColumn Header ="Totale-" Binding="{Binding TotaleMinus}"/>
+                <DataGridTextColumn Header ="Wist" Binding="{Binding Wist}"/>
+                <DataGridTextColumn Header ="Levate" Binding="{Binding Levate}"/>
+                <DataGridTextColumn Header ="Rent" Binding="{Binding Rent}"/>
+                <DataGridTextColumn Header ="Clubs10"  Binding="{Binding Clubs10}"/>
+
                 <DataGridTextColumn Header =" "/>
-                <!-- "KR", "Q", "Carro", "Totale+", "Totale-", "Wist", "Levate", "Rent", "Clubs10" -->
+                <!-- ItemsSource="{Binding gamesPlayed} -->
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid x:Name="Score_DataGrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="400,199,26,60"/>
-        
+        <DataGrid x:Name="Score_DataGrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="400,199,26,60">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header =" " Binding="{Binding name}" Width="75"/>
+                <DataGridTextColumn Header ="Score" Binding="{Binding score}" />
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <ComboBox x:Name="ComboBox_ActivePlayer" HorizontalAlignment="Left" Height="30" Margin="10,208,0,0" VerticalAlignment="Top" Width="120" Loaded="ComboBox_ActivePlayer_Loaded" SelectionChanged="ComboBox_ActivePlayer_SelectionChanged" />
+        <Label x:Name="Label_ActivePlayer" Content="Active Player" HorizontalAlignment="Left" Margin="10,181,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="ComboBox_ActiveGame" HorizontalAlignment="Left" Height="31" Margin="166,208,0,0" VerticalAlignment="Top" Width="120" Loaded="ComboBox_ActiveGame_Loaded" SelectionChanged="ComboBox_ActiveGame_SelectionChanged"/>
+        <Label x:Name="Label_ActiveGame" Content="Active Game" HorizontalAlignment="Left" Margin="166,182,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="Button_GameSet" Content="Button" HorizontalAlignment="Left" Margin="321,213,0,0" VerticalAlignment="Top" Click="Button_GameSet_Click"/>
     </Grid>
+
+
 </Window>

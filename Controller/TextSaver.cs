@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Windows;
+using System.ComponentModel;
 //using System.Windows;
 
 namespace PointsFGames.Controller
@@ -27,31 +29,41 @@ namespace PointsFGames.Controller
 
             foreach (string line in lines)
                 file.WriteLine(line.ToArray());
-           // file.WriteLine("String line ");
-            file.Close();
-        }
-        public List<Player> Load(string path2)
-        {   
-            List<Player> lines = new List<Player>();
+            // file.WriteLine("String line ");
+            file.Flush();
             
-            TextSaver test = new TextSaver(path2);
+            file.Close();
+            
+        }
+        public List<Player> Load()
+        {
+            try
+            {
+                using (var dummy = File.OpenWrite(this.path))
+                {
+                    dummy.Close();
+                }
+            }
+            catch (Exception) { }
+            List<Player> players = new List<Player>();
 
-            foreach (string line in System.IO.File.ReadLines(this.path))
+            var lines = System.IO.File.ReadAllLines(this.path);
+            foreach (string line in lines)
             {
               
                 List<string> player = line.Split(',').ToList();
                 string name = player[0];
                 int score = Int32.Parse(player[^1]);
                 player = player.GetRange(1, player.Count()-2);
+//                string str = String.Join(",", player);
+//                MessageBox.Show(str);
 
-                Dictionary<string, int> games = Player.gameReader(String.Join(',', player));
-
-                lines.Add(new Player(name, score, games));
+                players.Add(new Player(name, score, String.Join(',',player)));
             }
 
             
-          
-            return lines; 
+            
+            return players; 
         } 
     }
 

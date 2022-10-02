@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PointsFGames.Controller;
-
+using PointsFGames.View;
 
 namespace PointsFGames
 {
@@ -37,8 +37,9 @@ namespace PointsFGames
 
         private void ScoreModesButton_Click(object sender, RoutedEventArgs e)
         {
-            ScoringRules scoringRules = new ScoringRules();
-            scoringRules.Show();
+            ScoreBoard gameStart = new ScoreBoard();
+            gameStart.Show();
+            this.Close();
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
