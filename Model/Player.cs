@@ -56,7 +56,8 @@ namespace PointsFGames.Model
         {
             return this.gamesPlayed.ItemForDataGrid(name);
         }
-
+        
+        
         public string ReadGames()
         {
             string games;

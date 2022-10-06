@@ -28,6 +28,9 @@ namespace PointsFGames.View
 
             List<Player> players = new List<Player>();
             TextSaver loader = new TextSaver("C:\\Users\\emila\\source\\repos\\AdAstartes\\Training2\\Save.csv");
+
+            players = loader.Load("C:\\Users\\emila\\source\\repos\\AdAstartes\\Training2\\Save.csv");
+            TextSaver loader = new TextSaver("C:\\Users\\emila\\source\\repos\\AdAstartes\\Training2\\Save.csv");
             
             players = loader.Load();
             foreach (Player player in players)
@@ -47,6 +50,11 @@ namespace PointsFGames.View
                 players = playerList;
             
             foreach(Player player in players)
+                Games_DataGrid.Items.Add(player);
+
+
+            
+             
                 Games_DataGrid.Items.Add(player.GamesForDataGrid());
             
         }
