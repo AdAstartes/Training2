@@ -11,7 +11,7 @@ namespace PointsFGames.Model
     {
         private static List<string> listGames = new List<string>() { "KR", "Q", "Carro", "TotalePlus", "TotaleMinus", "Wist", "Levate", "Rent", "Clubs10" };
         public string name { get; set; }
-        public int score { get; set; } = 100;
+        public int score { get; set; } = 0;
 
         private GamesTable gamesPlayed;
 
