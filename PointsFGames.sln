@@ -9,9 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learning_Grounds", "..\Lear
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Threads_Tutorial", "..\Threads_Tutorial\Threads_Tutorial.csproj", "{FC701E96-011F-4B62-8D84-52D7A969B42E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Semaphore_Tutorial", "..\Semaphore_Tutorial\Semaphore_Tutorial.csproj", "{CDF5B83E-234B-4B02-96B7-99EF784086EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Semaphore_Tutorial", "..\Semaphore_Tutorial\Semaphore_Tutorial.csproj", "{CDF5B83E-234B-4B02-96B7-99EF784086EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadsBaby", "..\ThreadsBaby\ThreadsBaby.csproj", "{4A4C6AB1-68A9-46FA-95A4-2218538EB5FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThreadsBaby", "..\ThreadsBaby\ThreadsBaby.csproj", "{4A4C6AB1-68A9-46FA-95A4-2218538EB5FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SemaphoreBaby", "..\SemaphoreBaby\SemaphoreBaby.csproj", "{052CCE0A-F586-489D-94FA-9726B0A1E63A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{4A4C6AB1-68A9-46FA-95A4-2218538EB5FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A4C6AB1-68A9-46FA-95A4-2218538EB5FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A4C6AB1-68A9-46FA-95A4-2218538EB5FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{052CCE0A-F586-489D-94FA-9726B0A1E63A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{052CCE0A-F586-489D-94FA-9726B0A1E63A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{052CCE0A-F586-489D-94FA-9726B0A1E63A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{052CCE0A-F586-489D-94FA-9726B0A1E63A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,1 @@
+﻿I used this app to learn how C#. From what is an OOP to XAML and even multiThreading.
