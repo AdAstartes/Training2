@@ -48,6 +48,7 @@
         <TextBox x:Name="TextBox_Score" HorizontalAlignment="Left" Height="28" Margin="166,298,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118" TextChanged="TextBox_TextChanged" KeyDown="TextBox_Score_KeyPress"/>
         <Label x:Name="Label_Score" Content="Score Points" HorizontalAlignment="Left" Margin="168,270,0,0" VerticalAlignment="Top"/>
         <Button x:Name="Button_Save" Content="Save" HorizontalAlignment="Left" Margin="738,379,0,0" VerticalAlignment="Top" Height="31" Width="36" Click="Button_Save_Click"/>
+        <Button x:Name="Button_Exit" Content="Exit" HorizontalAlignment="Left" Height="30" Margin="10,380,0,0" VerticalAlignment="Top" Width="49" Click="Button_Click"/>
     </Grid>
 
 

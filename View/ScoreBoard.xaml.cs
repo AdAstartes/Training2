@@ -15,6 +15,10 @@ using PointsFGames.Controller;
 using PointsFGames.View;
 using PointsFGames.Model;
 using System.Reflection;
+using System.Threading;
+using System.Threading.Tasks;
+
+
 
 namespace PointsFGames.View
 {
@@ -28,6 +32,7 @@ namespace PointsFGames.View
         public ScoreBoard()
         {
             InitializeComponent();
+            Start();
 
             List<Player> players = new List<Player>();
             TextSaver loader = new TextSaver("C:\\Users\\emila\\source\\repos\\AdAstartes\\Training2\\Save.csv");
@@ -42,6 +47,7 @@ namespace PointsFGames.View
         public ScoreBoard(List<Player>? playerList)
         {
             InitializeComponent();
+            Start();
             List<Player> players = new List<Player>();
 
             if (playerList == null || playerList.Count() == 0)
@@ -58,6 +64,13 @@ namespace PointsFGames.View
             globalPlayerList = players;
 
             ScoreBoard_Score(players);
+        }
+
+        public void Start()
+        {
+            Thread autosave = new Thread(AutoSaveThread);
+            autosave.IsBackground = true;
+            autosave.Start();
         }
 
         public void ScoreBoard_Score(List<Player> playerList)
@@ -183,9 +196,13 @@ namespace PointsFGames.View
 
         private void Button_Save_Click(object sender, RoutedEventArgs e)
         {
-            TextSaver file = new TextSaver("C:\\Users\\emila\\source\\repos\\AdAstartes\\Training2\\Save.csv");
-            file.Save(globalPlayerList); 
+            SaveGame();
+        }
 
+        private void SaveGame()
+        {
+            TextSaver file = new TextSaver("C:\\Users\\emila\\source\\repos\\AdAstartes\\Training2\\Save.csv");
+            file.Save(globalPlayerList);
         }
 
         private void Score_DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -197,8 +214,23 @@ namespace PointsFGames.View
         {
 
         }
+        private void AutoSaveThread()
+        { 
+            while(true)
+            {
+                Thread.Sleep(10000);
+                SaveGame();
 
+            }
+            
+        }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+
+            Environment.Exit(Environment.ExitCode);
+        }
     }
 }
 
